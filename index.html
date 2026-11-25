@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVJ Jewellers | Solapur - Luxury Gold &amp; Diamond Jewellery</title>
+  <meta name="description"
+    content="SVJ Jewellers Solapur - 916 Hallmark Gold, Certified Diamonds, Bridal Collections &amp; Solitaires at Baba Complex, Saraf Bazar, Solapur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ======= TOP NAVIGATION BAR ======= -->
+  <header class="top-navbar">
+    <div class="navbar-inner">
+      <div class="nav-left">
+        <img src="assets/logo.jpg" class="brand-logo" alt="SVJ Jewellers Logo" />
+        <div class="brand-text">
+          <h1 class="brand-title">SVJ JEWELLERS</h1>
+          <span class="brand-subtitle"><i class="fa-solid fa-gem"></i> SARAF BAZAR, SOLAPUR</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#live-rates">Live Rates</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Heritage</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="tel:8378929951" class="nav-action-btn" title="Call Showroom">
+          <i class="fa-solid fa-phone"></i> <span>83789 29951</span>
+        </a>
+        <a href="https://wa.me/918378929951?text=Hello%20SVJ%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection."
+          target="_blank" rel="noopener" class="nav-action-btn wa-btn" title="WhatsApp Us">
+          <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION (WARM IVORY, LOGO & CAPTION) ======= -->
+  <section class="hero-banner" id="home">
+    <div class="hero-ambient-glow"></div>
+    <div class="hero-content">
+      <div class="hero-logo-showcase">
+        <img src="assets/logo.jpg" alt="SVJ Jewellers Crest" class="hero-center-logo" />
+      </div>
+      <span class="hero-tag"><i class="fa-solid fa-crown"></i> SVJ JEWELLERS • SARAF BAZAR, SOLAPUR</span>
+      <h2 class="hero-heading">Where Craftsmanship Meets <span class="amber-shimmer">Timeless Divinity</span></h2>
+      <p class="hero-desc">
+        BIS 916 Hallmarked Gold, IGI &amp; GIA Certified Solitaires, and Pure Silver Artistry crafted with generations
+        of trust.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#collections" class="btn btn-amber"><i class="fa-solid fa-sparkles"></i> Explore Collections</a>
+        <a href="#live-rates" class="btn btn-outline-brown"><i class="fa-solid fa-arrow-trend-up"></i> Today's Live
+          Rates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= QUICK ACTION BAR ======= -->
+  <section class="quick-actions-bar">
+    <a href="tel:8378929951" class="action-card">
+      <div class="action-icon phone-icon"><i class="fa-solid fa-phone-volume"></i></div>
+      <span class="action-label">Call Showroom</span>
+      <span class="action-sub">+91 83789 29951</span>
+    </a>
+    <a href="https://wa.me/918378929951?text=Hello%20SVJ%20Jewellers,%20I%20am%20interested%20in%20your%20jewellery%20designs."
+      target="_blank" rel="noopener" class="action-card">
+      <div class="action-icon wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      <span class="action-label">WhatsApp Chat</span>
+      <span class="action-sub">Instant Support</span>
+    </a>
+    <a href="#contact" class="action-card">
+      <div class="action-icon map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+      <span class="action-label">Visit Showroom</span>
+      <span class="action-sub">Saraf Bazar, Solapur</span>
+    </a>
+  </section>
+
+  <!-- ======= LIVE GOLD & SILVER RATES ======= -->
+  <section class="section-container live-rates-section" id="live-rates">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">REAL-TIME BULLION FEED</span>
+        <h2 class="section-title">Live Gold &amp; Silver Rates</h2>
+        <p class="section-subtitle">Auto-refreshes every 60 seconds from live international bullion &amp; INR exchange
+          feeds.</p>
+      </div>
+
+      <div class="rates-header-card">
+        <div class="rates-tag-row">
+          <span class="live-pulse-badge">
+            <span class="pulse-dot"></span> LIVE MARKET RATES (AUTO-SYNC 1 MIN)
+          </span>
+          <button id="btn-refresh-rates" class="btn-refresh-rates" title="Refresh Live Market Rates"
+            aria-label="Refresh Rates">
+            <i class="fa-solid fa-arrows-rotate" id="refresh-icon"></i> <span id="refresh-text">Sync Now</span>
+          </button>
+        </div>
+        <div class="rates-meta-row">
+          <div class="rates-date-box">
+            <i class="fa-regular fa-clock"></i> Last Updated: <span id="rates-current-date">Connecting...</span>
+          </div>
+          <div class="rates-status-box">
+            <i class="fa-solid fa-circle-check"></i> <span id="market-status-badge">Fetching Live Feed...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rates-grid">
+        <!-- 24K -->
+        <div class="rate-card rate-card-gold24">
+          <div class="rate-card-top">
+            <div class="rate-metal-badge gold24-badge"><i class="fa-solid fa-crown"></i> 24K PURE GOLD</div>
+            <span class="rate-purity">99.9% Pure</span>
+          </div>
+          <div class="rate-main-price">
+            <span class="currency">₹</span><span id="rate-gold-24k-10g" class="price-val">--</span>
+            <span class="per-unit">/ 10g</span>
+          </div>
+          <div class="rate-sub-price">
+            <span>Per Gram: <strong class="currency">₹</strong><strong id="rate-gold-24k-1g">--</strong></span>
+            <span class="rate-change positive" id="rate-gold-24k-change">LIVE</span>
+          </div>
+        </div>
+
+        <!-- 22K -->
+        <div class="rate-card rate-card-gold22 highlight-rate">
+          <div class="rate-card-top">
+            <div class="rate-metal-badge gold22-badge"><i class="fa-solid fa-certificate"></i> 22K HALLMARK GOLD</div>
+            <span class="rate-purity">BIS 916 Standard</span>
+          </div>
+          <div class="rate-main-price">
+            <span class="currency">₹</span><span id="rate-gold-22k-10g" class="price-val">--</span>
+            <span class="per-unit">/ 10g</span>
+          </div>
+          <div class="rate-sub-price">
+            <span>Per Gram: <strong class="currency">₹</strong><strong id="rate-gold-22k-1g">--</strong></span>
+            <span class="rate-change positive" id="rate-gold-22k-change">LIVE</span>
+          </div>
+        </div>
+
+        <!-- 18K -->
+        <div class="rate-card rate-card-gold18">
+          <div class="rate-card-top">
+            <div class="rate-metal-badge gold18-badge"><i class="fa-solid fa-gem"></i> 18K DIAMOND GOLD</div>
+            <span class="rate-purity">BIS 750 Standard</span>
+          </div>
+          <div class="rate-main-price">
+            <span class="currency">₹</span><span id="rate-gold-18k-10g" class="price-val">--</span>
+            <span class="per-unit">/ 10g</span>
+          </div>
+          <div class="rate-sub-price">
+            <span>Per Gram: <strong class="currency">₹</strong><strong id="rate-gold-18k-1g">--</strong></span>
+            <span class="rate-change positive" id="rate-gold-18k-change">LIVE</span>
+          </div>
+        </div>
+
+        <!-- Silver -->
+        <div class="rate-card rate-card-silver">
+          <div class="rate-card-top">
+            <div class="rate-metal-badge silver-badge"><i class="fa-solid fa-coins"></i> PURE FINE SILVER</div>
+            <span class="rate-purity">999 Chandi Bullion</span>
+          </div>
+          <div class="rate-main-price">
+            <span class="currency">₹</span><span id="rate-silver-1kg" class="price-val">--</span>
+            <span class="per-unit">/ 1 KG</span>
+          </div>
+          <div class="rate-sub-price">
+            <span>Per 10g: <strong class="currency">₹</strong><strong id="rate-silver-10g">--</strong></span>
+            <span class="rate-change positive" id="rate-silver-change">LIVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= COLLECTIONS SECTION ======= -->
+  <section class="section-container collections-section" id="collections">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">CURATED MASTERPIECES</span>
+        <h2 class="section-title">Our Exclusive Collections</h2>
+        <p class="section-subtitle">Exquisite bridal jewellery, temple artistry, pure silver lamps, and radiant
+          solitaire rings.</p>
+      </div>
+
+      <div class="filter-scroll">
+        <button class="filter-pill active" data-category="all">All Designs</button>
+        <button class="filter-pill" data-category="silver"><i class="fa-solid fa-sparkles"></i> Pure Silver
+          Collection</button>
+        <button class="filter-pill" data-category="rings">Rings</button>
+        <button class="filter-pill" data-category="necklaces">Necklaces</button>
+        <button class="filter-pill" data-category="bangles">Bangles &amp; Kadas</button>
+        <button class="filter-pill" data-category="earrings">Earrings</button>
+        <button class="filter-pill" data-category="bridal">Bridal Sets</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Populated by items.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT / HERITAGE SECTION ======= -->
+  <section class="section-container feature-highlight-section" id="about">
+    <div class="section-inner">
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Solapur's Trusted Jewellers</h3>
+        <p>Rooted in Mangalwar Peth Saraf Bazar with a legacy of gold purity, transparent billing, and artisan
+          craftsmanship.</p>
+        <div class="feature-stats">
+          <div class="stat-item">
+            <span class="stat-number">916</span>
+            <span class="stat-label">Hallmark Gold</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Certified Solitaires</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Custom</span>
+            <span class="stat-label">Bespoke Orders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT SECTION ======= -->
+  <section class="section-container contact-section" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title">Visit Our Solapur Showroom</h2>
+        <p class="section-subtitle">We warmly welcome you to experience our jewellery in person.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-cards-stack">
+          <div class="contact-card highlight-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div class="contact-card-info">
+              <span class="info-label">Customer Care &amp; Orders</span>
+              <a href="tel:8378929951" class="info-value phone-link">+91 83789 29951</a>
+              <span class="info-note"><i class="fa-solid fa-clock"></i> Mon - Sun: 10:30 AM - 9:00 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="contact-card-info">
+              <span class="info-label">Official Email</span>
+              <a href="mailto:svjjewellers28@gmail.com" class="info-value email-link">svjjewellers28@gmail.com</a>
+              <span class="info-note">Replies typically within 24 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-card-info">
+              <span class="info-label">Showroom Address</span>
+              <p class="info-value address-text">478 Purv Mangalwar Peth, Baba Complex, Saraf Bazar, Solapur,
+                Maharashtra</p>
+              <span class="info-note"><i class="fa-solid fa-map-pin"></i> Heart of Solapur Saraf Bazar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="inquiry-box">
+          <div class="inquiry-header">
+            <h3><i class="fa-solid fa-comments"></i> Send Showroom Inquiry</h3>
+            <p>Request gold rate quotation, custom order design, or book an appointment</p>
+          </div>
+          <form id="contact-form" class="inquiry-form">
+            <div class="form-group">
+              <label for="client-name">Your Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="client-name" name="name" placeholder="Enter your full name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="client-phone">Phone / WhatsApp Number</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <input type="tel" id="client-phone" name="phone" placeholder="e.g. 9876543210" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="jewelry-type">Interested In</label>
+              <div class="input-wrapper select-wrapper">
+                <i class="fa-solid fa-gem"></i>
+                <select id="jewelry-type" name="interest">
+                  <option value="Bridal Gold Jewellery">Bridal Gold Jewellery (916)</option>
+                  <option value="Diamond Solitaire Ring">Diamond Solitaire Ring</option>
+                  <option value="Gold Bangles & Kadas">Gold Bangles &amp; Kadas</option>
+                  <option value="Antique / Temple Jewellery">Antique / Temple Jewellery</option>
+                  <option value="Custom Made Design">Custom Made Design</option>
+                  <option value="Today Gold Rate Inquiry">Today's Gold Rate Inquiry</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="client-message">Message / Specific Request</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-pen-fancy"></i>
+                <textarea id="client-message" name="message" rows="3"
+                  placeholder="Tell us what you are looking for (weight, design, occasion)..."></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-wa-submit" id="btn-submit-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Inquire via WhatsApp
+              </button>
+              <button type="submit" class="btn btn-email-submit">
+                <i class="fa-solid fa-envelope"></i> Send via Email
+              </button>
+            </div>
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-embed-container">
+        <div class="map-header">
+          <div>
+            <h4>SVJ Jewellers Location</h4>
+            <p>478 Purv Mangalwar Peth, Baba Complex, Saraf Bazar, Solapur</p>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=478+Purv+Mangalwar+Peth+Solapur+Baba+Complex+Saraf+Bazar"
+            target="_blank" rel="noopener" class="btn btn-sm btn-outline-brown">
+            <i class="fa-solid fa-directions"></i> Get Directions
+          </a>
+        </div>
+        <div class="map-frame">
+          <iframe title="SVJ Jewellers Map Location"
+            src="https://maps.google.com/maps?q=Purv+Mangalwar+Peth+Solapur+Saraf+Bazar&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="assets/logo.jpg" alt="SVJ Jewellers" class="footer-logo-img" />
+      <div class="footer-brand">SVJ JEWELLERS</div>
+      <p class="footer-tagline">Where Craftsmanship Meets Timeless Divinity • BIS 916 Hallmark Gold</p>
+      <p class="footer-address">478 Purv Mangalwar Peth, Baba Complex, Saraf Bazar, Solapur - Maharashtra</p>
+      <div class="footer-contact-links">
+        <a href="tel:8378929951"><i class="fa-solid fa-phone"></i> 8378929951</a>
+        <span>•</span>
+        <a href="mailto:svjjewellers28@gmail.com"><i class="fa-solid fa-envelope"></i> svjjewellers28@gmail.com</a>
+      </div>
+      <div class="footer-copy">
+        © <span id="current-year"></span> SVJ Jewellers. All rights reserved. Handcrafted luxury jewellery.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="upload-guide-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-file-invoice"></i> Item Document Format</h3>
+        <button class="modal-close" id="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">Whenever you have your item documents, photos, or spreadsheets ready, send or drop them
+          here. They can include:</p>
+        <ul class="modal-list">
+          <li><strong>Photos / Scans:</strong> Images of Rings, Necklaces, Kadas, Bangles, etc.</li>
+          <li><strong>Item Specifications:</strong> Metal (Gold 22K/18K, Silver, Platinum), Gross/Net Weight, Carat.
+          </li>
+          <li><strong>Certification:</strong> HUID (Hallmark Unique ID), Diamond Color &amp; Clarity (VVS-EF).</li>
+          <li><strong>Documents:</strong> PDF Catalog, Excel Sheet, Invoices or Itemized Lists.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-amber btn-block" id="btn-modal-ok">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="product-detail-modal">
+    <div class="modal-card product-modal">
+      <div class="modal-header">
+        <h3 id="modal-product-title">Item Details</h3>
+        <button class="modal-close" id="btn-close-product-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modal-product-body"></div>
+    </div>
+  </div>
+
+  <!-- Project Scripts -->
+  <script src="items.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
