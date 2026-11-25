@@ -137,15 +137,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (!goldData || !silverData) {
-          const headers = { "Authorization": `Bearer ${NEBULA_TOKEN}` };
-          const [goldResp, silverResp] = await Promise.all([
-            fetch("https://workspace.nebulaapi.com/gold_price?city=Mumbai", { method: "GET", headers }),
-            fetch("https://workspace.nebulaapi.com/silver_price?city=Mumbai", { method: "GET", headers })
+          // Direct live spot fallback (works even without local proxy)
+          const [xauResp, xagResp, fxResp] = await Promise.all([
+            fetch("https://api.gold-api.com/price/XAU"),
+            fetch("https://api.gold-api.com/price/XAG"),
+            fetch("https://open.er-api.com/v6/latest/USD")
           ]);
-          if (!goldResp.ok || !silverResp.ok) {
-            throw new Error(`API HTTP ${goldResp.status}/${silverResp.status}`);
+          if (!xauResp.ok || !xagResp.ok || !fxResp.ok) {
+            throw new Error("Live bullion feed unavailable");
           }
-          [goldData, silverData] = await Promise.all([goldResp.json(), silverResp.json()]);
+          const [xau, xag, fx] = await Promise.all([xauResp.json(), xagResp.json(), fxResp.json()]);
+          const usdInr = fx?.rates?.INR;
+          const g24_10g = Math.round((xau.price / 31.1034768) * usdInr * 10 * 1.1545 * 1.03);
+          const g22_10g = Math.round(g24_10g * 0.9167);
+          const g18_10g = Math.round(g24_10g * 0.75);
+          const s_1kg = Math.round((xag.price / 31.1034768) * usdInr * 1000 * 1.21 * 1.03);
+          goldData = {
+            market: "Indian Market (Live Spot + Duty & 3% GST)",
+            city: "Mumbai / Solapur",
+            timestamp: new Date().toISOString(),
+            prices: {
+              gold24k: { priceFor10g: g24_10g, pricePerGram: Math.round(g24_10g / 10) },
+              gold22k: { priceFor10g: g22_10g, pricePerGram: Math.round(g22_10g / 10) },
+              gold18k: { priceFor10g: g18_10g, pricePerGram: Math.round(g18_10g / 10) }
+            }
+          };
+          silverData = {
+            prices: { silver: { pricePerKg: s_1kg, pricePerGram: Number((s_1kg / 1000).toFixed(2)) } }
+          };
         }
 
         const g24 = goldData?.prices?.gold24k;
