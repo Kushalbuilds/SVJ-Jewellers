@@ -2999,6 +2999,34 @@ const SVJ_CATALOG = [
     "priceEstimate": "Calculated by Live Silver Rate",
     "image": "assets/silver/silver_091.jpg",
     "description": "Magnificent pair of handcrafted pure 925 silver Samai lamps (15\" height, approx. weight 1250 g). Adorned with auspicious Mayur (peacock) finial and deeply embossed traditional nakshi work. Perfect for temple pooja, festive illumination, wedding gifts, and griha pravesh."
+  },
+  {
+    "id": "svj-silver-092",
+    "title": "Lotus Pooja Thali & Deepak Set (6-Piece) - 350g",
+    "category": "silver",
+    "metal": "92.5 Fine Sterling Silver",
+    "purity": "BIS 925 Hallmark Silver",
+    "weight": "350 g",
+    "size": "Complete 6-Piece Thali Set",
+    "certification": "SVJ 925 Hallmark Certified",
+    "badge": "New Arrival",
+    "priceEstimate": "Calculated by Live Silver Rate",
+    "image": "assets/silver/silver_092.jpg",
+    "description": "Exquisite 6-piece pure 925 silver Pooja Thali set (approx. weight 350 g). Includes a mirror-polish round thali, central carved lotus-bud stand, two covered kumkum-haldi dibbis, and two pedestal deepak diyas. Ideal for daily worship, festivals, wedding gifting, and griha pravesh."
+  },
+  {
+    "id": "svj-silver-093",
+    "title": "Embossed Rim Lotus Pooja Thali Set (6-Piece) - 330g",
+    "category": "silver",
+    "metal": "92.5 Fine Sterling Silver",
+    "purity": "BIS 925 Hallmark Silver",
+    "weight": "330 g",
+    "size": "Complete 6-Piece Thali Set",
+    "certification": "SVJ 925 Hallmark Certified",
+    "badge": "Festive Special",
+    "priceEstimate": "Calculated by Live Silver Rate",
+    "image": "assets/silver/silver_093.jpg",
+    "description": "Handcrafted 6-piece pure 925 silver Pooja Thali set (approx. weight 330 g) featuring an embossed designer rim plate, central carved lotus-bud centerpiece, two lidded kumkum containers, and two pedestal aarti diyas. Perfect for temple pooja, auspicious gifting, and festive rituals."
   }
 ];
 
