@@ -3072,7 +3072,7 @@ function openProductModal(id) {
 
   body.innerHTML = `
     <div style="text-align: center; margin-bottom: 14px;">
-      <div style="width: 100%; height: 210px; margin: 0 auto; background: radial-gradient(circle at 50% 45%, #2a1a0e, #120a04); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.4); padding: 12px; overflow: hidden;">
+      <div style="width: 100%; height: 210px; margin: 0 auto; background: radial-gradient(circle at 50% 45%, #7a5030, #4a2e1b); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.4); padding: 12px; overflow: hidden;">
         ${visualPreview}
       </div>
     </div>
