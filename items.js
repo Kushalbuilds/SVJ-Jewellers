@@ -3067,12 +3067,12 @@ function openProductModal(id) {
   );
 
   const visualPreview = item.image 
-    ? `<img src="${item.image}" alt="${item.title}" style="max-height: 220px; max-width: 100%; border-radius: 8px; object-fit: contain;" />`
+    ? `<img src="${item.image}" alt="${item.title}" style="max-height: 180px; max-width: 240px; border-radius: 10px; object-fit: contain; filter: contrast(1.12) saturate(1.2) brightness(1.06) drop-shadow(0 6px 16px rgba(244,198,104,0.35));" />`
     : (item.iconSvg || `<i class="fa-solid fa-gem" style="font-size: 50px; color: #d4af37;"></i>`);
 
   body.innerHTML = `
     <div style="text-align: center; margin-bottom: 14px;">
-      <div style="width: 100%; max-height: 240px; margin: 0 auto; background: radial-gradient(circle, #fffdf8, #f7eedc); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.3); padding: 12px; overflow: hidden;">
+      <div style="width: 100%; height: 210px; margin: 0 auto; background: radial-gradient(circle at 50% 45%, #2a1a0e, #120a04); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.4); padding: 12px; overflow: hidden;">
         ${visualPreview}
       </div>
     </div>
