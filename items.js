@@ -3067,12 +3067,12 @@ function openProductModal(id) {
   );
 
   const visualPreview = item.image 
-    ? `<img src="${item.image}" alt="${item.title}" style="max-height: 180px; max-width: 240px; border-radius: 10px; object-fit: contain; filter: contrast(1.12) saturate(1.2) brightness(1.06) drop-shadow(0 6px 16px rgba(244,198,104,0.35));" />`
+    ? `<img src="${item.image}" alt="${item.title}" style="max-height: 195px; max-width: 275px; border-radius: 8px; object-fit: contain; display: block; margin: 0 auto; image-rendering: -webkit-optimize-contrast; image-rendering: high-quality; filter: contrast(1.08) saturate(1.15) brightness(1.04) drop-shadow(0 6px 20px rgba(244,198,104,0.38));" />`
     : (item.iconSvg || `<i class="fa-solid fa-gem" style="font-size: 50px; color: #d4af37;"></i>`);
 
   body.innerHTML = `
     <div style="text-align: center; margin-bottom: 14px;">
-      <div style="width: 100%; height: 210px; margin: 0 auto; background: radial-gradient(circle at 50% 45%, #2a1a0e, #120a04); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.4); padding: 12px; overflow: hidden;">
+      <div style="width: 100%; height: 230px; margin: 0 auto; background: radial-gradient(circle at 50% 50%, #2a1a0e 0%, #120a04 75%, #080402 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(180,114,24,0.4); padding: 12px; overflow: hidden; box-sizing: border-box;">
         ${visualPreview}
       </div>
     </div>

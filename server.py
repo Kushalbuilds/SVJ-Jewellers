@@ -15,12 +15,12 @@ NEBULA_TOKEN = "nbk_1bR8M6Q6w_uw9pDg1penScaubjF2fHRs"
 TROY_OUNCE_IN_GRAMS = 31.1034768
 
 
-def fetch_json(url, headers=None):
+def fetch_json(url, headers=None, timeout=3):
     req_headers = {"Accept": "application/json", "User-Agent": "SVJ-Jewellers/1.0"}
     if headers:
         req_headers.update(headers)
     req = urllib.request.Request(url, headers=req_headers)
-    with urllib.request.urlopen(req, timeout=10) as resp:
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
