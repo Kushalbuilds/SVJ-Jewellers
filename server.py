@@ -17,10 +17,10 @@ DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 TROY_OUNCE_IN_GRAMS = 31.1034768
 
 # Official Solapur & Maharashtra Bullion Benchmarks (November 2026)
-BENCHMARK_24K_10G = 124600
-BENCHMARK_22K_10G = 114200
-BENCHMARK_18K_10G = 96200
-BENCHMARK_SILVER_1KG = 165000
+BENCHMARK_24K_10G = 125800
+BENCHMARK_22K_10G = 115300
+BENCHMARK_18K_10G = 94350
+BENCHMARK_SILVER_1KG = 168000
 
 
 def fetch_json(url, headers=None, timeout=3):
@@ -44,7 +44,7 @@ def get_accurate_market_rates():
     gold24_1g = round(gold24_10g / 10)
     gold22_10g = round(gold24_10g * 0.9167)
     gold22_1g = round(gold22_10g / 10)
-    gold18_10g = round(gold24_10g * 0.772)
+    gold18_10g = round(gold24_10g * 0.75)
     gold18_1g = round(gold18_10g / 10)
 
     silver_tick = math.sin((minute_of_day / 1440.0) * math.pi * 2) * 450
@@ -100,16 +100,18 @@ def fetch_live_rates():
         # Indian domestic spot conversion with duty and local premium
         # 1 Troy Oz = 31.1035g -> conversion to 10g in INR with domestic import multiplier
         g24_10g = round((xau_usd / TROY_OUNCE_IN_GRAMS) * usd_inr * 10 * 1.55)
-        # Verify within reasonable bounds of current domestic benchmark
-        if 115000 <= g24_10g <= 135000:
+        # Verify within reasonable bounds of current domestic benchmark (1.20L - 1.35L)
+        if 118000 <= g24_10g <= 135000:
             now_iso = datetime.now(timezone.utc).isoformat()
             g24_1g = round(g24_10g / 10)
             g22_10g = round(g24_10g * 0.9167)
             g22_1g = round(g22_10g / 10)
-            g18_10g = round(g24_10g * 0.772)
+            g18_10g = round(g24_10g * 0.75)
             g18_1g = round(g18_10g / 10)
 
             s_1kg = round((xag_usd / TROY_OUNCE_IN_GRAMS) * usd_inr * 1000 * 1.85)
+            if not (150000 <= s_1kg <= 190000):
+                s_1kg = BENCHMARK_SILVER_1KG
             s_10g = round(s_1kg / 100)
             s_1g = round(s_1kg / 1000, 2)
 

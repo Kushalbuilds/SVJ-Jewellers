@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================================
 
   const BENCHMARKS = {
-    gold24k: 124600,
-    gold22k: 114200,
-    gold18k: 96200,
-    silver1kg: 165000
+    gold24k: 125800,
+    gold22k: 115300,
+    gold18k: 94350,
+    silver1kg: 168000
   };
 
   const RatesEngine = {
@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const g24 = Math.round(BENCHMARKS.gold24k + tick);
       const g22 = Math.round(g24 * 0.9167);
-      const g18 = Math.round(g24 * 0.772);
-      const s1kg = Math.round(BENCHMARKS.silver1kg + tick * 2.8);
+      const g18 = Math.round(g24 * 0.75);
+      const s1kg = Math.round(BENCHMARKS.silver1kg + tick * 2.5);
 
       const changePct = (0.35 + Math.abs(Math.sin(now.getDate())) * 0.22).toFixed(2);
 
@@ -240,40 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (statusEl) {
         statusEl.textContent = r.statusText;
       }
-
-      this.updateCalculator();
-    },
-
-    updateCalculator() {
-      const metalSelect = document.getElementById("calc-metal-type");
-      const weightInput = document.getElementById("calc-weight-input");
-      const baseEl = document.getElementById("calc-base-val");
-      const gstEl = document.getElementById("calc-gst-val");
-      const totalEl = document.getElementById("calc-total-val");
-
-      if (!metalSelect || !weightInput || !baseEl || !gstEl || !totalEl) return;
-
-      const metal = metalSelect.value;
-      const weight = parseFloat(weightInput.value) || 0;
-      let perGramRate = 0;
-
-      if (metal === "gold24") {
-        perGramRate = this.currentRates.gold24k1g;
-      } else if (metal === "gold22") {
-        perGramRate = this.currentRates.gold22k1g;
-      } else if (metal === "gold18") {
-        perGramRate = this.currentRates.gold18k1g;
-      } else if (metal === "silver") {
-        perGramRate = this.currentRates.silver1kg / 1000;
-      }
-
-      const baseValue = Math.round(perGramRate * weight);
-      const gstValue = Math.round(baseValue * 0.03); // 3% GST on bullion & jewellery in India
-      const totalValue = baseValue + gstValue;
-
-      baseEl.textContent = `₹${baseValue.toLocaleString("en-IN")}`;
-      gstEl.textContent = `₹${gstValue.toLocaleString("en-IN")}`;
-      totalEl.textContent = `₹${totalValue.toLocaleString("en-IN")}`;
     },
 
     refresh() {
@@ -296,40 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
   RatesEngine.updateUI();
   RatesEngine.fetchLiveRates();
 
-  // Calculator listeners
-  const calcMetal = document.getElementById("calc-metal-type");
-  const calcWeight = document.getElementById("calc-weight-input");
-  if (calcMetal) calcMetal.addEventListener("change", () => RatesEngine.updateCalculator());
-  if (calcWeight) calcWeight.addEventListener("input", () => RatesEngine.updateCalculator());
-
   // Refresh button listener
   const btnRefresh = document.getElementById("btn-refresh-rates");
   if (btnRefresh) {
     btnRefresh.addEventListener("click", () => RatesEngine.refresh());
-  }
-
-  // Lock Rate on WhatsApp listener
-  const btnLockRate = document.getElementById("btn-lock-rate-wa");
-  if (btnLockRate) {
-    btnLockRate.addEventListener("click", () => {
-      const metalSelect = document.getElementById("calc-metal-type");
-      const weightInput = document.getElementById("calc-weight-input");
-      const totalEl = document.getElementById("calc-total-val");
-
-      const metalName = metalSelect.options[metalSelect.selectedIndex].text;
-      const weight = weightInput.value;
-      const total = totalEl.textContent;
-
-      const waMsg = `Hello SVJ Jewellers, I would like to lock today's live rate:\n` +
-        `🪙 *Metal & Purity:* ${metalName}\n` +
-        `⚖️ *Weight:* ${weight} Grams\n` +
-        `💰 *Estimated Value (inc. 3% GST):* ${total}\n` +
-        `📍 *Showroom:* Baba Complex, Saraf Bazar, Solapur\n` +
-        `Please confirm rate lock and booking appointment.`;
-
-      const waUrl = `https://wa.me/918378929951?text=${encodeURIComponent(waMsg)}`;
-      window.open(waUrl, "_blank");
-    });
   }
 
   // Auto-refresh every 60 seconds
