@@ -1,7 +1,7 @@
 /**
  * SVJ Jewellers - Item Catalog Architecture
- * 91 Real Gold Masterpieces (24K, 22K, 18K) & 93 Pure Silver Designs
- * Categories: Bangles & Kadas (19), Necklaces (25), Earrings (22), Rings (25), Silver (93)
+ * 90 Real Gold Masterpieces (24K, 22K, 18K) & 93 Pure Silver Designs
+ * Categories: Bangles & Kadas (18), Necklaces (25), Earrings (22), Rings (25), Silver (93)
  */
 
 const SVJ_CATALOG = [
@@ -18,20 +18,6 @@ const SVJ_CATALOG = [
     "priceEstimate": "Calculated by Live Gold Rate",
     "image": "assets/gold/sunshine_kada_royal_woven.png",
     "description": "Signature Sunshine Royal Woven Mesh Bracelet crafted in BIS 916 22K gold with ornate filigree end-caps and traditional hook clasp."
-  },
-  {
-    "id": "svj-sunshine-kada-4804",
-    "title": "Sunshine Cuban Kada - Openwork Panther",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "15 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4804.png",
-    "description": "Sunshine Cuban Kada - Openwork Panther (Design #4804) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 15 g."
   },
   {
     "id": "svj-gold-bangle-s01",
