@@ -780,6 +780,57 @@ body {
   transform: translateX(100%);
 }
 
+/* Luxury White Satin Cushion / Small Pillow Showcase for All Gold Items */
+.product-card:not([data-category="silver"]) .product-img-wrap {
+  background: radial-gradient(circle at 50% 45%, #3a2414 0%, #1d1007 78%, #100803 100%);
+  padding: 16px;
+}
+
+.product-card:not([data-category="silver"]) .product-img-wrap::before {
+  content: '';
+  position: absolute;
+  width: 84%;
+  height: 82%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 36% 30%, #ffffff 0%, #faf8f4 48%, #ede8de 82%, #d9d0c1 100%);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.55),
+    inset 0 4px 10px rgba(255, 255, 255, 0.98),
+    inset 0 -10px 18px rgba(176, 160, 136, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.85);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.product-card:not([data-category="silver"]) .product-img-wrap img {
+  position: relative;
+  z-index: 1;
+  max-width: 72%;
+  max-height: 148px;
+  border-radius: 10px;
+  filter: contrast(1.06) saturate(1.12) brightness(1.02) drop-shadow(0 8px 14px rgba(38, 24, 10, 0.36));
+}
+
+.modal-gold-cushion {
+  width: 82%;
+  height: 196px;
+  border-radius: 26px;
+  background: radial-gradient(ellipse at 36% 30%, #ffffff 0%, #faf8f4 48%, #ede8de 82%, #d9d0c1 100%);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.58),
+    inset 0 5px 12px rgba(255, 255, 255, 0.98),
+    inset 0 -10px 18px rgba(176, 160, 136, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
 .product-img-wrap img,
 .product-img-wrap svg {
   max-width: 205px;
