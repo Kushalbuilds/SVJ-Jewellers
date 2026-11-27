@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================================================
-  // 6. ACCURATE LIVE GOLD & SILVER RATES ENGINE (SOLAPUR / MAHARASHTRA BULLION)
+  // 6. ACCURATE LIVE GOLD & SILVER RATES ENGINE (MUMBAI,SOLAPUR / MAHARASHTRA BULLION)
   // =========================================================================
 
   const BENCHMARKS = {
