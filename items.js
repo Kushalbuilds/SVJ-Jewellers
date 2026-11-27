@@ -1,7 +1,7 @@
 /**
  * SVJ Jewellers - Item Catalog Architecture
- * 104 Real Gold Masterpieces (24K, 22K, 18K) & 93 Pure Silver Designs
- * Categories: Bangles & Kadas (32), Necklaces (25), Earrings (22), Rings (25), Silver (93)
+ * 91 Real Gold Masterpieces (24K, 22K, 18K) & 93 Pure Silver Designs
+ * Categories: Bangles & Kadas (19), Necklaces (25), Earrings (22), Rings (25), Silver (93)
  */
 
 const SVJ_CATALOG = [
@@ -20,76 +20,6 @@ const SVJ_CATALOG = [
     "description": "Signature Sunshine Royal Woven Mesh Bracelet crafted in BIS 916 22K gold with ornate filigree end-caps and traditional hook clasp."
   },
   {
-    "id": "svj-sunshine-02",
-    "title": "Sunshine Royal Lion Heritage Cuff Bracelet",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Bracelet | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "55.00 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_bracelet_royal_lion_cuff.png",
-    "description": "Statement Sunshine Royal Lion sculpted centerpiece bracelet with heavy woven gold links and safety chain."
-  },
-  {
-    "id": "svj-sunshine-kada-4801",
-    "title": "Sunshine Cuban Kada - Double Ring",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "15 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4801.png",
-    "description": "Sunshine Cuban Kada - Double Ring (Design #4801) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 15 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4803",
-    "title": "Sunshine Cuban Kada - Sleek T-Bar",
-    "category": "bangles",
-    "carat": "18k",
-    "metal": "Cuban Kada | 18K Hallmark Gold",
-    "purity": "BIS 750 Standard (75.0%)",
-    "weight": "15 g",
-    "certification": "BIS 750 HUID Hallmarked",
-    "badge": "18K Gold",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4803.png",
-    "description": "Sunshine Cuban Kada - Sleek T-Bar (Design #4803) from the Sunshine Cuban Kada collection in BIS 750 Standard (75.0%), approx. 15 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4805",
-    "title": "Sunshine Cuban Kada - Panther Solitaire",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "20 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4805.png",
-    "description": "Sunshine Cuban Kada - Panther Solitaire (Design #4805) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 20 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4802",
-    "title": "Sunshine Cuban Kada - Filigree Oval",
-    "category": "bangles",
-    "carat": "18k",
-    "metal": "Cuban Kada | 18K Hallmark Gold",
-    "purity": "BIS 750 Standard (75.0%)",
-    "weight": "15 g",
-    "certification": "BIS 750 HUID Hallmarked",
-    "badge": "18K Gold",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4802.png",
-    "description": "Sunshine Cuban Kada - Filigree Oval (Design #4802) from the Sunshine Cuban Kada collection in BIS 750 Standard (75.0%), approx. 15 g."
-  },
-  {
     "id": "svj-sunshine-kada-4804",
     "title": "Sunshine Cuban Kada - Openwork Panther",
     "category": "bangles",
@@ -102,118 +32,6 @@ const SVJ_CATALOG = [
     "priceEstimate": "Calculated by Live Gold Rate",
     "image": "assets/gold/sunshine_kada_4804.png",
     "description": "Sunshine Cuban Kada - Openwork Panther (Design #4804) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 15 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4807",
-    "title": "Sunshine Cuban Kada - Enamel Leopard",
-    "category": "bangles",
-    "carat": "18k",
-    "metal": "Cuban Kada | 18K Hallmark Gold",
-    "purity": "BIS 750 Standard (75.0%)",
-    "weight": "12 g",
-    "certification": "BIS 750 HUID Hallmarked",
-    "badge": "18K Gold",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4807.png",
-    "description": "Sunshine Cuban Kada - Enamel Leopard (Design #4807) from the Sunshine Cuban Kada collection in BIS 750 Standard (75.0%), approx. 12 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4806",
-    "title": "Sunshine Cuban Kada - Emerald Serpent",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "12 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4806.png",
-    "description": "Sunshine Cuban Kada - Emerald Serpent (Design #4806) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 12 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4809",
-    "title": "Sunshine Cuban Kada - Greek Key Lattice",
-    "category": "bangles",
-    "carat": "18k",
-    "metal": "Cuban Kada | 18K Hallmark Gold",
-    "purity": "BIS 750 Standard (75.0%)",
-    "weight": "12 g",
-    "certification": "BIS 750 HUID Hallmarked",
-    "badge": "18K Gold",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4809.png",
-    "description": "Sunshine Cuban Kada - Greek Key Lattice (Design #4809) from the Sunshine Cuban Kada collection in BIS 750 Standard (75.0%), approx. 12 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4808",
-    "title": "Sunshine Cuban Kada - Diagonal Facet",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "10 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4808.png",
-    "description": "Sunshine Cuban Kada - Diagonal Facet (Design #4808) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 10 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4810",
-    "title": "Sunshine Cuban Kada - Diamond Pave",
-    "category": "bangles",
-    "carat": "18k",
-    "metal": "Cuban Kada | 18K Hallmark Gold",
-    "purity": "BIS 750 Standard (75.0%)",
-    "weight": "10 g",
-    "certification": "BIS 750 HUID Hallmarked",
-    "badge": "18K Gold",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4810.png",
-    "description": "Sunshine Cuban Kada - Diamond Pave (Design #4810) from the Sunshine Cuban Kada collection in BIS 750 Standard (75.0%), approx. 10 g."
-  },
-  {
-    "id": "svj-sunshine-kada-4811",
-    "title": "Sunshine Cuban Kada - Engraved Meander",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Cuban Kada | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "10 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_kada_4811.png",
-    "description": "Sunshine Cuban Kada - Engraved Meander (Design #4811) from the Sunshine Cuban Kada collection in BIS 916 Standard (91.6%), approx. 10 g."
-  },
-  {
-    "id": "svj-sunshine-jaguar-2201",
-    "title": "Sunshine Jaguar Lion Medallion Bracelet",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Jaguar Bracelet | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "45 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_jaguar_2201.png",
-    "description": "Sunshine Jaguar Lion Medallion Bracelet (Design #2201) crafted in BIS 916 22K gold with bold sculpted motif and precision articulated links."
-  },
-  {
-    "id": "svj-sunshine-jaguar-2202",
-    "title": "Sunshine Jaguar Pave Panther Bracelet",
-    "category": "bangles",
-    "carat": "22k",
-    "metal": "Jaguar Bracelet | 22K Hallmark Gold",
-    "purity": "BIS 916 Standard (91.6%)",
-    "weight": "60 g",
-    "certification": "BIS 916 HUID Hallmarked",
-    "badge": "22K Hallmark",
-    "priceEstimate": "Calculated by Live Gold Rate",
-    "image": "assets/gold/sunshine_jaguar_2202.png",
-    "description": "Sunshine Jaguar Pave Panther Bracelet (Design #2202) crafted in BIS 916 22K gold with bold sculpted motif and precision articulated links."
   },
   {
     "id": "svj-gold-bangle-s01",
