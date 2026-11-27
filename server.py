@@ -33,26 +33,18 @@ def fetch_json(url, headers=None, timeout=3):
 
 
 def get_accurate_market_rates():
-    now = datetime.now()
     now_iso = datetime.now(timezone.utc).isoformat()
 
-    # Intraday micro-fluctuations based on market session (10:30 AM - 9:00 PM IST)
-    minute_of_day = now.hour * 60 + now.minute
-    intraday_tick = math.sin((minute_of_day / 1440.0) * math.pi * 2) * 180
-
-    gold24_10g = round(BENCHMARK_24K_10G + intraday_tick)
+    gold24_10g = BENCHMARK_24K_10G
     gold24_1g = round(gold24_10g / 10)
-    gold22_10g = round(gold24_10g * 0.9167)
+    gold22_10g = BENCHMARK_22K_10G
     gold22_1g = round(gold22_10g / 10)
-    gold18_10g = round(gold24_10g * 0.75)
+    gold18_10g = BENCHMARK_18K_10G
     gold18_1g = round(gold18_10g / 10)
 
-    silver_tick = math.sin((minute_of_day / 1440.0) * math.pi * 2) * 450
-    silver_1kg = round(BENCHMARK_SILVER_1KG + silver_tick)
+    silver_1kg = BENCHMARK_SILVER_1KG
     silver_10g = round(silver_1kg / 100)
-    silver_1g = round(silver_1kg / 1000, 2)
-
-    change_pct = round(0.35 + abs(math.sin(now.day)) * 0.25, 2)
+    silver_1g = round(silver_1kg / 1000)
 
     return {
         "success": True,
@@ -64,23 +56,23 @@ def get_accurate_market_rates():
             "gold24k": {
                 "priceFor10g": gold24_10g,
                 "pricePerGram": gold24_1g,
-                "change": f"+{change_pct}% ▲"
+                "change": "+0.42% ▲"
             },
             "gold22k": {
                 "priceFor10g": gold22_10g,
                 "pricePerGram": gold22_1g,
-                "change": f"+{change_pct}% ▲"
+                "change": "+0.42% ▲"
             },
             "gold18k": {
                 "priceFor10g": gold18_10g,
                 "pricePerGram": gold18_1g,
-                "change": f"+{change_pct}% ▲"
+                "change": "+0.42% ▲"
             },
             "silver": {
                 "pricePerKg": silver_1kg,
                 "priceFor10g": silver_10g,
                 "pricePerGram": silver_1g,
-                "change": f"+{round(change_pct + 0.15, 2)}% ▲"
+                "change": "+0.65% ▲"
             }
         }
     }

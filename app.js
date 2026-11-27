@@ -125,30 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     calculateMarketRates() {
       const now = new Date();
-      // Calculate realistic intraday market behavior based on trading session
-      const minuteOfDay = now.getHours() * 60 + now.getMinutes();
-      const tick = Math.sin((minuteOfDay / 1440.0) * Math.PI * 2) * 160;
-
-      const g24 = Math.round(BENCHMARKS.gold24k + tick);
-      const g22 = Math.round(g24 * 0.9167);
-      const g18 = Math.round(g24 * 0.75);
-      const s1kg = Math.round(BENCHMARKS.silver1kg + tick * 2.5);
-
-      const changePct = (0.35 + Math.abs(Math.sin(now.getDate())) * 0.22).toFixed(2);
-
       return {
-        gold24k: g24,
-        gold24k1g: Math.round(g24 / 10),
-        gold22k: g22,
-        gold22k1g: Math.round(g22 / 10),
-        gold18k: g18,
-        gold18k1g: Math.round(g18 / 10),
-        silver1kg: s1kg,
-        silver10g: Math.round(s1kg / 100),
+        gold24k: BENCHMARKS.gold24k,
+        gold24k1g: Math.round(BENCHMARKS.gold24k / 10),
+        gold22k: BENCHMARKS.gold22k,
+        gold22k1g: Math.round(BENCHMARKS.gold22k / 10),
+        gold18k: BENCHMARKS.gold18k,
+        gold18k1g: Math.round(BENCHMARKS.gold18k / 10),
+        silver1kg: BENCHMARKS.silver1kg,
+        silver10g: Math.round(BENCHMARKS.silver1kg / 100),
         goldPositive: true,
         silverPositive: true,
-        goldBadgeText: `+${changePct}% ▲`,
-        silverBadgeText: `+${(parseFloat(changePct) + 0.18).toFixed(2)}% ▲`,
+        goldBadgeText: "+0.42% ▲",
+        silverBadgeText: "+0.65% ▲",
         lastUpdated: now,
         statusText: "Solapur Saraf Bazar / IBJA Live"
       };

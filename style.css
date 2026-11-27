@@ -607,34 +607,57 @@ body {
 }
 
 .rate-main-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 3px;
   margin-bottom: 10px;
 }
 
 .currency {
+  font-family: var(--font-sans);
   font-size: 20px;
   color: var(--amber-primary);
   font-weight: 700;
+  line-height: 1;
 }
 
 .price-val {
-  font-family: var(--font-serif);
-  font-size: 32px;
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-size: 30px;
   font-weight: 800;
   color: var(--brown-dark);
-  margin: 0 4px;
+  line-height: 1;
+  letter-spacing: -0.5px;
 }
 
 .per-unit {
+  font-family: var(--font-sans);
   font-size: 13px;
   color: var(--brown-muted);
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 2px;
 }
 
 .rate-sub-price {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   font-size: 13px;
   color: var(--brown-muted);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.rate-sub-price strong {
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-weight: 700;
 }
 
 .rate-change {
@@ -967,9 +990,12 @@ body {
 }
 
 .stat-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
   font-size: 1.85rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--amber-light);
   display: block;
 }
