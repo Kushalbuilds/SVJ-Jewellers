@@ -263,4 +263,30 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     RatesEngine.fetchLiveRates();
   }, 60000);
+
+  // =========================================================================
+  // 7. MOBILE SIDEBAR DRAWER
+  // =========================================================================
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileSidebar = document.getElementById("mobile-sidebar");
+  const mobileOverlay = document.getElementById("mobile-sidebar-overlay");
+  const mobileCloseBtn = document.getElementById("mobile-sidebar-close");
+
+  const setSidebar = (open) => {
+    if (!mobileSidebar || !mobileOverlay) return;
+    mobileSidebar.classList.toggle("open", open);
+    mobileOverlay.classList.toggle("open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", String(open));
+  };
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", () => setSidebar(true));
+  if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", () => setSidebar(false));
+  if (mobileOverlay) mobileOverlay.addEventListener("click", () => setSidebar(false));
+  document.querySelectorAll(".mobile-nav-link").forEach(link => {
+    link.addEventListener("click", () => setSidebar(false));
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setSidebar(false);
+  });
 });
