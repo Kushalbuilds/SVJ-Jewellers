@@ -48,32 +48,43 @@ def get_accurate_market_rates():
     silver_10g = round(silver_1kg / 100)
     silver_1g = round(silver_1kg / 1000)
 
+    GST = 1.03   # 3% GST on gold & silver (India)
     return {
         "success": True,
         "source": "aib-allindiabullion",
         "market": "All India Bullion (AIB) — Zaveri Bazar, Mumbai | allindiabullion.com",
         "city": "Solapur",
         "timestamp": now_iso,
+        "gstRate": 3,
         "prices": {
             "gold24k": {
                 "priceFor10g": gold24_10g,
+                "priceFor10gWithGST": round(gold24_10g * GST),
                 "pricePerGram": gold24_1g,
+                "pricePerGramWithGST": round(gold24_1g * GST),
                 "change": "+0.42% ▲"
             },
             "gold22k": {
                 "priceFor10g": gold22_10g,
+                "priceFor10gWithGST": round(gold22_10g * GST),
                 "pricePerGram": gold22_1g,
+                "pricePerGramWithGST": round(gold22_1g * GST),
                 "change": "+0.42% ▲"
             },
             "gold18k": {
                 "priceFor10g": gold18_10g,
+                "priceFor10gWithGST": round(gold18_10g * GST),
                 "pricePerGram": gold18_1g,
+                "pricePerGramWithGST": round(gold18_1g * GST),
                 "change": "+0.42% ▲"
             },
             "silver": {
                 "pricePerKg": silver_1kg,
+                "pricePerKgWithGST": round(silver_1kg * GST),
                 "priceFor10g": silver_10g,
+                "priceFor10gWithGST": round(silver_10g * GST),
                 "pricePerGram": silver_1g,
+                "pricePerGramWithGST": round(silver_1g * GST),
                 "change": "+0.65% ▲"
             }
         }
@@ -110,17 +121,19 @@ def fetch_live_rates():
             s_10g = round(s_1kg / 100)
             s_1g = round(s_1kg / 1000, 2)
 
+            GST = 1.03
             return {
                 "success": True,
                 "source": "live-aib-calibrated",
                 "market": "AIB Live-Calibrated (Spot + Import Duty + Domestic Premium | allindiabullion.com)",
                 "city": "Solapur",
                 "timestamp": now_iso,
+                "gstRate": 3,
                 "prices": {
-                    "gold24k": {"priceFor10g": g24_10g, "pricePerGram": g24_1g, "change": "+0.42% ▲"},
-                    "gold22k": {"priceFor10g": g22_10g, "pricePerGram": g22_1g, "change": "+0.42% ▲"},
-                    "gold18k": {"priceFor10g": g18_10g, "pricePerGram": g18_1g, "change": "+0.42% ▲"},
-                    "silver": {"pricePerKg": s_1kg, "priceFor10g": s_10g, "pricePerGram": s_1g, "change": "+0.58% ▲"}
+                    "gold24k": {"priceFor10g": g24_10g, "priceFor10gWithGST": round(g24_10g*GST), "pricePerGram": g24_1g, "pricePerGramWithGST": round(g24_1g*GST), "change": "+0.42% ▲"},
+                    "gold22k": {"priceFor10g": g22_10g, "priceFor10gWithGST": round(g22_10g*GST), "pricePerGram": g22_1g, "pricePerGramWithGST": round(g22_1g*GST), "change": "+0.42% ▲"},
+                    "gold18k": {"priceFor10g": g18_10g, "priceFor10gWithGST": round(g18_10g*GST), "pricePerGram": g18_1g, "pricePerGramWithGST": round(g18_1g*GST), "change": "+0.42% ▲"},
+                    "silver": {"pricePerKg": s_1kg, "pricePerKgWithGST": round(s_1kg*GST), "priceFor10g": s_10g, "priceFor10gWithGST": round(s_10g*GST), "pricePerGram": s_1g, "pricePerGramWithGST": round(s_1g*GST), "change": "+0.58% ▲"}
                 }
             }
     except Exception:

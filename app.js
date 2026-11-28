@@ -106,8 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
     silver1kg: 157400  // ₹1,57,400 / kg  — 999 Fine Silver (AIB published)
   };
 
+  const GST_RATE = 1.03; // 3% GST on gold & silver (India)
+  let gstEnabled = false; // default: Excl. GST (AIB wholesale rate)
+
   const RatesEngine = {
     previousRates: null,
+    rawRates: null, // ex-GST base rates stored separately
     currentRates: {
       gold24k: BENCHMARKS.gold24k,
       gold24k1g: Math.round(BENCHMARKS.gold24k / 10),
@@ -122,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       goldBadgeText: "+0.42% ▲",
       silverBadgeText: "+0.65% ▲",
       lastUpdated: new Date(),
-      statusText: "Solapur Saraf Bazar / IBJA Live"
+      statusText: "All India Bullion (AIB)"
     },
 
     calculateMarketRates() {
@@ -141,7 +145,23 @@ document.addEventListener("DOMContentLoaded", () => {
         goldBadgeText: "+0.42% ▲",
         silverBadgeText: "+0.65% ▲",
         lastUpdated: now,
-        statusText: "Solapur Saraf Bazar / IBJA Live"
+        statusText: "All India Bullion (AIB)"
+      };
+    },
+
+    // Apply or remove GST multiplier on the display rates
+    applyGST(base) {
+      const m = gstEnabled ? GST_RATE : 1;
+      return {
+        ...base,
+        gold24k:   Math.round(base.gold24k   * m),
+        gold24k1g: Math.round(base.gold24k1g * m),
+        gold22k:   Math.round(base.gold22k   * m),
+        gold22k1g: Math.round(base.gold22k1g * m),
+        gold18k:   Math.round(base.gold18k   * m),
+        gold18k1g: Math.round(base.gold18k1g * m),
+        silver1kg: Math.round(base.silver1kg * m),
+        silver10g: Math.round(base.silver10g * m)
       };
     },
 
@@ -157,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const g18 = p.gold18k.priceFor10g;
             const s1kg = p.silver.pricePerKg;
 
-            this.currentRates = {
+            this.rawRates = {
               gold24k: g24,
               gold24k1g: p.gold24k.pricePerGram || Math.round(g24 / 10),
               gold22k: g22,
@@ -171,8 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
               goldBadgeText: p.gold24k.change || "+0.42% ▲",
               silverBadgeText: p.silver.change || "+0.65% ▲",
               lastUpdated: new Date(data.timestamp || Date.now()),
-              statusText: data.market || "Solapur Saraf Bazar / IBJA Live"
+              statusText: data.market || "All India Bullion (AIB)"
             };
+            this.currentRates = this.applyGST(this.rawRates);
             this.updateUI();
             return;
           }
@@ -181,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fallback to accurate internal market engine
       }
 
-      this.currentRates = this.calculateMarketRates();
+      this.rawRates = this.calculateMarketRates();
+      this.currentRates = this.applyGST(this.rawRates);
       this.updateUI();
     },
 
@@ -231,6 +253,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (statusEl) {
         statusEl.textContent = r.statusText;
       }
+
+      // Update GST badge label on each rate card
+      document.querySelectorAll(".gst-badge-label").forEach(el => {
+        el.textContent = gstEnabled ? "Incl. 3% GST" : "Excl. GST";
+        el.classList.toggle("gst-on", gstEnabled);
+      });
     },
 
     refresh() {
@@ -257,6 +285,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnRefresh = document.getElementById("btn-refresh-rates");
   if (btnRefresh) {
     btnRefresh.addEventListener("click", () => RatesEngine.refresh());
+  }
+
+  // GST Toggle
+  const gstToggleEl = document.getElementById("gst-toggle");
+  const gstStateEl  = document.getElementById("gst-toggle-state");
+  if (gstToggleEl) {
+    gstToggleEl.addEventListener("click", () => {
+      gstEnabled = !gstEnabled;
+      gstToggleEl.setAttribute("aria-checked", String(gstEnabled));
+      gstToggleEl.classList.toggle("active", gstEnabled);
+      if (gstStateEl) gstStateEl.textContent = gstEnabled ? "Incl. GST" : "Excl. GST";
+      // Re-apply GST multiplier and refresh UI
+      if (RatesEngine.rawRates) {
+        RatesEngine.currentRates = RatesEngine.applyGST(RatesEngine.rawRates);
+      }
+      RatesEngine.updateUI();
+    });
   }
 
   // Auto-refresh every 60 seconds
