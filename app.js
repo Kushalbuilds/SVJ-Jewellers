@@ -97,13 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 6. ACCURATE LIVE GOLD & SILVER RATES ENGINE (MUMBAI,SOLAPUR / MAHARASHTRA BULLION)
   // =========================================================================
 
-  // AIBJA / IBJA Official Bullion Benchmarks — 28 November 2026
-  // Source: ibjarates.com | allindiabullion.com (All India Bullion, Zaveri Bazar)
+  // AIB Official Bullion Rates — 28 November 2026
+  // Source: allindiabullion.com (All India Bullion — AIB, Zaveri Bazar, Mumbai)
   const BENCHMARKS = {
-    gold24k: 126299,   // ₹1,26,299 / 10g — 999 Fine Gold
-    gold22k: 115690,   // ₹1,15,690 / 10g — 916 Hallmark Gold
-    gold18k: 94724,    // ₹94,724  / 10g — 750 Diamond Gold
-    silver1kg: 154300  // ₹1,54,300 / kg  — 999 Fine Silver
+    gold24k: 129571,   // ₹1,29,571 / 10g — 999 Fine Gold (AIB published)
+    gold22k: 118784,   // ₹1,18,784 / 10g — 916 Hallmark Gold (24K × 0.9167)
+    gold18k: 97178,    // ₹97,178  / 10g — 750 Diamond Gold  (24K × 0.75)
+    silver1kg: 157400  // ₹1,57,400 / kg  — 999 Fine Silver (AIB published)
   };
 
   const RatesEngine = {
