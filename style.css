@@ -1689,6 +1689,15 @@ body.about-page .small-label {
   filter: brightness(0.95);
 }
 
+.price-tick {
+  animation: priceFlash 0.65s ease-out;
+}
+
+@keyframes priceFlash {
+  0% { color: var(--amber-primary); text-shadow: 0 0 10px rgba(201, 123, 24, 0.35); }
+  100% { color: inherit; text-shadow: none; }
+}
+
 /* ================== MOBILE SIDEBAR DRAWER ================== */
 .mobile-menu-btn {
   display: none;
