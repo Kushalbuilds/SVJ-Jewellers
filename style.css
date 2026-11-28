@@ -1408,6 +1408,55 @@ body {
 }
 
 /* ================== ABOUT US PAGE & CTA ================== */
+/* SVJ Jewellers Typography (About Us) */
+body.about-page {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+body.about-page h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+body.about-page h2,
+body.about-page .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+body.about-page h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+body.about-page p {
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: 0.1px;
+}
+
+body.about-page .quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+body.about-page .small-label {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .nav-links a.active-nav {
   color: var(--amber-primary);
   font-weight: 700;
@@ -1432,18 +1481,12 @@ body {
 }
 
 .about-hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(32px, 4.5vw, 48px);
-  font-weight: 800;
   color: var(--brown-dark);
-  line-height: 1.2;
   margin: 14px 0 18px;
 }
 
 .about-hero-subtitle {
-  font-size: 16px;
   color: var(--brown-muted);
-  line-height: 1.75;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -1494,35 +1537,22 @@ body {
 }
 
 .about-story-quote p {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 17px;
-  line-height: 1.7;
   color: var(--brown-dark);
   margin-bottom: 12px;
 }
 
 .about-story-quote span {
-  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
   color: var(--amber-primary);
 }
 
 .about-heading {
-  font-family: var(--font-serif);
-  font-size: 32px;
-  font-weight: 700;
   color: var(--brown-dark);
   margin: 10px 0 18px;
-  line-height: 1.25;
 }
 
 .about-para {
-  font-size: 15px;
   color: var(--brown-primary);
-  line-height: 1.8;
   margin-bottom: 16px;
 }
 
@@ -1589,18 +1619,20 @@ body {
   margin-bottom: 16px;
 }
 
-.pillar-card h4 {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 700;
+.pillar-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 600;
   color: var(--brown-dark);
   margin-bottom: 10px;
 }
 
 .pillar-card p {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--brown-muted);
-  line-height: 1.7;
+  line-height: 1.85;
+  letter-spacing: 0.1px;
 }
 
 .about-cta-section {
@@ -1621,14 +1653,11 @@ body {
 }
 
 .about-cta-text h3 {
-  font-family: var(--font-serif);
-  font-size: 28px;
   color: var(--brown-dark);
   margin: 8px 0 10px;
 }
 
 .about-cta-text p {
-  font-size: 14.5px;
   color: var(--brown-muted);
   max-width: 560px;
 }
@@ -1668,6 +1697,28 @@ body {
 }
 
 @media (max-width: 768px) {
+  body.about-page h1 {
+    font-size: 32px;
+  }
+
+  body.about-page h2,
+  body.about-page .section-title {
+    font-size: 27px;
+  }
+
+  body.about-page h3 {
+    font-size: 20px;
+  }
+
+  body.about-page p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  body.about-page .quote {
+    font-size: 17px;
+  }
+
   .navbar-inner { height: 64px; }
   .brand-title { font-size: 16px; letter-spacing: 2px; }
   .nav-action-btn span { display: none; }
